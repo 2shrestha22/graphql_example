@@ -27,7 +27,6 @@ class HomePage extends StatelessWidget {
         options: QueryOptions(
           document: gql(contries),
           parserFn: (json) {
-            log(json.toString());
             return (json["countries"] as List)
                 .map((e) => Country.fromJson(e))
                 .toList();
